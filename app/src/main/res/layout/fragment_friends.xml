@@ -6,7 +6,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/friends_text"
-        android:textStyle="bold"
         android:textColor="@color/colorAccent"
         android:textSize="40sp"/>
 </RelativeLayout>
