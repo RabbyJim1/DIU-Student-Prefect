@@ -13,7 +13,6 @@ import android.widget.ImageButton;
 import android.widget.Switch;
 import android.widget.Toast;
 
-import com.example.rabby.finalyearproject_final.signin.SigninActivity;
 import com.firebase.ui.auth.AuthUI;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -34,8 +33,8 @@ public class MainActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
-        bottomNavigationView = findViewById(R.id.mainBottomNav);
-        addNewPostButton = findViewById(R.id.add_post_btn);
+        bottomNavigationView = findViewById(R.id.bottom_navigation);
+        addNewPostButton = findViewById(R.id.add_new_post_button);
 
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, selectedFragment).commit();
         bottomNavigationView.setOnNavigationItemSelectedListener(listener);
@@ -61,6 +60,10 @@ public class MainActivity extends AppCompatActivity {
                             selectedFragment = new FragmentHome();
                             addNewPostButton.setVisibility(View.VISIBLE);
                             break;
+                        case R.id.nav_friends:
+                            selectedFragment = new FragmentFrinds();
+                            addNewPostButton.setVisibility(View.INVISIBLE);
+                            break;
                         case R.id.nav_notification:
                             selectedFragment = new FragmentNotification();
                             addNewPostButton.setVisibility(View.INVISIBLE);
@@ -81,6 +84,7 @@ public class MainActivity extends AppCompatActivity {
             };
 
     protected void onStart() {
+
         super.onStart();
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if(currentUser == null){
@@ -89,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void sendUserToLoginActivity() {
-        Intent loginIntent = new Intent(MainActivity.this, SigninActivity.class);
+        Intent loginIntent = new Intent(MainActivity.this, LoginActivity.class);
         loginIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(loginIntent);
         finish();
