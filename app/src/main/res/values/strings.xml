@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Final Year Project- final</string>
     <string name="title_activity_main2">Main2Activity</string>
+    <string name="friends_text">Friends</string>
 </resources>
