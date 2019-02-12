@@ -22,7 +22,7 @@
             android:id="@+id/imgView_logo"
             android:adjustViewBounds="true"
             android:scaleType="fitCenter"
-            android:src="@drawable/twitter"/>
+            android:src="@drawable/twitter" />
 
         <RelativeLayout
             android:id="@+id/login_rellay1"
@@ -190,8 +190,6 @@
         android:visibility="gone"
         >
 
-
-
         <Button
             android:id="@+id/register_account_link"
             android:layout_width="wrap_content"
@@ -205,7 +203,7 @@
             android:id="@+id/reset_password_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
             android:background="@color/transparent"
             android:fontFamily="sans-serif"
             android:text="Forget Password?"
